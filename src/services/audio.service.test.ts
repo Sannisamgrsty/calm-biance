@@ -1,6 +1,6 @@
 import type { AmbientSound } from "../types/ambient-sound";
 import type { HowlPlayerOptions } from "../types/audio.services";
-import { describe, expect, it, vi, beforeEach, assert } from "vitest";
+import { describe, expect, it, vi, beforeEach } from "vitest";
 import { Howl } from "howler";
 import { AudioService } from "./audio.service";
 
@@ -192,8 +192,6 @@ describe("AudioService", () => {
         audioService.play("forest-1", option);
         audioService.play("forest-2", option);
         audioService.play("forest-3", option);
-
-        const player = vi.mocked(Howl).mock.results.length;
 
         expect(Howl).toHaveBeenCalledTimes(3);
     })
