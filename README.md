@@ -1,75 +1,105 @@
-# React + TypeScript + Vite
+# 🌙 Sleep Ambience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for creating personalized ambience soundscapes.
 
-Currently, two official plugins are available:
+Mix multiple ambient sounds, adjust individual volumes, and use a built-in timer to help you sleep, focus, study, or relax.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎯 About This Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project was built to explore modern frontend architecture using React and TypeScript.
 
-## Expanding the ESLint configuration
+Instead of focusing only on the UI, the project emphasizes:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Service-oriented architecture
+- Custom React hooks
+- Type-safe domain models
+- Unit testing with Vitest
+- Clean and maintainable code structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 🎵 Mix multiple ambient sounds
+- 🔊 Individual volume control
+- 🎚 Master volume control
+- ⏲ Sleep timer
+- 💾 Local storage persistence
+- 📱 Responsive design
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
+
+
+## 🛠 Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Howler.js
+- Vitest
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository.
+
+```bash
+git clone https://github.com/yourusername/sleep-ambience.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Run the development server.
+
+```bash
+npm run dev
+```
+
+Open your browser.
 
 ```
+http://localhost:5173
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+
+├── assets/
+├── components/
+├── constants/
+├── hooks/
+├── pages/
+├── services/
+├── styles/
+├── types/
+└── utils/
+```
+
+---
+
+## 📌 Roadmap
+
+- [x] Project setup
+- [ ] Audio Service
+- [ ] Timer Service
+- [ ] Local Storage
+- [ ] Responsive UI
+- [ ] CSS Animations
+- [ ] PWA Support
+
+---
+
+## 📄 License
+
+MIT
