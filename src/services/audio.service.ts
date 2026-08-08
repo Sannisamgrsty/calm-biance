@@ -12,6 +12,12 @@ export class AudioService {
         this.sounds = sounds;
     }
 
+    private isValidVolume(
+        volume: number
+    ): boolean {
+        return volume >= 0 && volume <= 1;
+    }
+
     private getSound(id: AmbientSound["id"]): AmbientSound {
 
         const sound = this.sounds.find((sound) => sound.id === id);
@@ -28,17 +34,26 @@ export class AudioService {
         sound: AmbientSound,
         options: HowlPlayerOptions,
     ): Howl {
+
+        if (!this.isValidVolume(options.volume)) {
+            throw new Error(`Invalid volume: ${options.volume}`);
+        }
+
         const howlOptions: HowlOptions = {
             src: sound.src,
             volume: options.volume,
             loop: options.loop,
 
-            onloaderror(id: number, err: unknown) { console.error("Load Error:", id, err); },
-            onplayerror(id: number, err: unknown) { console.error("Play Error:", id, err); }
-        }
+            onloaderror(id: number, err: unknown) {
+                console.error("Load Error:", id, err);
+            },
 
-        const player: Howl = new Howl(howlOptions);
-        return player;
+            onplayerror(id: number, err: unknown) {
+                console.error("Play Error:", id, err);
+            }
+        };
+
+        return new Howl(howlOptions);
     }
 
     // Fungsi untuk mengambil player yang sudah ada 
@@ -123,7 +138,7 @@ export class AudioService {
         id: AmbientSound["id"],
         volume: number
     ): void {
-        if (volume >= 0 && volume <= 1) {
+        if (this.isValidVolume(volume)) {
             const player = this.getExistingPlayer(id);
 
             if (player) {
@@ -141,12 +156,16 @@ export class AudioService {
         volumeEnd: number,
         seconds: number,
     ): void {
-        const player = this.getExistingPlayer(id);
+        if (this.isValidVolume(volumeStart) && this.isValidVolume(volumeEnd)) {
+            const player = this.getExistingPlayer(id);
 
-        if (player) {
-            const milliseconds = seconds * 1000;
+            if (player) {
+                const milliseconds = seconds * 1000;
 
-            player.fade(volumeStart, volumeEnd, milliseconds)
+                player.fade(volumeStart, volumeEnd, milliseconds)
+            }
+        } else {
+            console.error("fade : Please input 0.0 - 1.0 to volumeStart and volumeEnd.")
         }
     }
 
