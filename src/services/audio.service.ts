@@ -1,7 +1,7 @@
 import { Howl } from "howler";
 import type { HowlOptions } from "howler";
-import type { AmbientSound } from "../types/ambient-sound";
-import type { HowlPlayerOptions } from "../types/audio.services";
+import type { AmbientSound } from "../types/services/ambient-sound";
+import type { HowlPlayerOptions } from "../types/services/audio.services";
 
 export class AudioService {
     private sounds: AmbientSound[];

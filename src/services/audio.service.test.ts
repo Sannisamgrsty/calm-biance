@@ -1,5 +1,5 @@
-import type { AmbientSound } from "../types/ambient-sound";
-import type { HowlPlayerOptions } from "../types/audio.services";
+import type { AmbientSound } from "../types/services/ambient-sound";
+import type { HowlPlayerOptions } from "../types/services/audio.services";
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { Howl } from "howler";
 import { AudioService } from "./audio.service";

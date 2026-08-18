@@ -1,4 +1,4 @@
-import type { AmbientSound } from "../types/ambient-sound";
+import type { AmbientSound } from "../types/services/ambient-sound";
 import firePlaceSound from "../assets/fireplace/fire-place.ogg";
 import clearForest from "../assets/forest/clear-forest.ogg";
 import summerForest from "../assets/forest/summer-forest.ogg";

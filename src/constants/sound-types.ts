@@ -1,4 +1,4 @@
-import type { SoundType } from "../types/ambient-sound";
+import type { SoundType } from "../types/services/ambient-sound";
 import { CloudRain, Flame, Keyboard, Piano, TrainFront, Trees } from "lucide-react";
 
 export const soundTypes: SoundType[] = [
