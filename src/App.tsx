@@ -12,9 +12,13 @@ export default function App() {
   const [addedSounds, setAddedSounds] = useState<SoundId[]>([]);
   const [soundStates, setSoundStates] = useState<SoundStates>({});
 
+  function hasSound(id: SoundId): boolean {
+    return addedSounds.includes(id);
+  }
+
   function addSound(id: SoundId) {
     // Cek apakah sound sudah ada dalam added sound
-    if (addedSounds.includes(id)) {
+    if (hasSound(id)) {
       return;
     }
 
@@ -40,10 +44,7 @@ export default function App() {
 
   function removeSound(id: SoundId) {
     // Cek apakah sound sudah teradd
-    if (
-      !addedSounds.includes(id) &&
-      !Object.keys(soundStates).includes(id)
-    ) {
+    if (!hasSound(id)) {
       return;
     }
 
@@ -64,7 +65,41 @@ export default function App() {
   }
 
   function pauseSound(id: SoundId) {
+    // Cek apa
+    if (!hasSound(id)) {
+      return;
+    }
 
+    // Audio service pause
+    audioService.pause(id);
+
+    // Change status to pause
+    setSoundStates((prev) => ({
+      ...prev,
+      [id]: {
+        ...prev[id],
+        status: "paused",
+      },
+    }))
+  }
+
+  function playSound(id: SoundId) {
+    if (!hasSound(id)) {
+      return;
+    }
+
+    audioService.play(id, {
+      volume: soundStates[id].volume,
+      loop: soundStates[id].loop,
+    });
+
+    setSoundStates((prev) => ({
+      ...prev,
+      [id]: {
+        ...prev[id],
+        status: "playing",
+      },
+    }));
   }
 
   return (
