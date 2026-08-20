@@ -1,4 +1,4 @@
-import { Pause, Volume } from "lucide-react";
+import { Volume } from "lucide-react";
 import { sounds } from "./constants/sounds";
 import { useAudio } from "./hooks/use-audio"
 import type { AmbientSound } from "./types/services/ambient-sound";
