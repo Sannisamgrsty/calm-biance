@@ -15,7 +15,7 @@ import typingSound from "../assets/typing/typing-sound.ogg";
 export const sounds: AmbientSound[] = [
     {
         id: "fireplace-1",
-        name: "Fireplace - 1",
+        name: "Fireplace - Calm",
         src: firePlaceSound,
         typeId: "fireplace"
     },

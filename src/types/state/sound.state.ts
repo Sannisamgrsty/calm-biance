@@ -10,4 +10,4 @@ export interface SoundState {
     loop: boolean;
 }
 
-export type SoundStates = Record<SoundId, SoundState>;
+export type SoundStates = Partial<Record<SoundId, SoundState>>;

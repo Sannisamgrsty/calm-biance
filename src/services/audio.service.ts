@@ -137,16 +137,20 @@ export class AudioService {
     setVolume(
         id: AmbientSound["id"],
         volume: number
-    ): void {
-        if (this.isValidVolume(volume)) {
-            const player = this.getExistingPlayer(id);
-
-            if (player) {
-                player.volume(volume);
-            }
-        } else {
-            console.error("SetVolume : Please input 0.0 - 1.0")
+    ): boolean {
+        if (!this.isValidVolume(volume)) {
+            console.error("SetVolume: Please input 0.0 - 1.0");
+            return false;
         }
+
+        const player = this.getExistingPlayer(id);
+
+        if (!player) {
+            return false;
+        }
+
+        player.volume(volume);
+        return true;
     }
 
     //Set Fade
