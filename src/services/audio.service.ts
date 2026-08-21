@@ -44,6 +44,15 @@ export class AudioService {
             volume: options.volume,
             loop: options.loop,
             html5: false,
+            onload: function () {
+                if ('mediaSession' in navigator) {
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: 'Judul Lagu',
+                        artist: 'Nama Artis',
+                        album: 'Nama Album'
+                    });
+                }
+            },
 
             onloaderror(id: number, err: unknown) {
                 console.error("Load Error:", id, err);
