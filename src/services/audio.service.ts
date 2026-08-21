@@ -43,6 +43,7 @@ export class AudioService {
             src: sound.src,
             volume: options.volume,
             loop: options.loop,
+            html5: true,
 
             onloaderror(id: number, err: unknown) {
                 console.error("Load Error:", id, err);
