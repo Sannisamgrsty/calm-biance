@@ -1,16 +1,16 @@
 import type { AmbientSound } from "../types/services/ambient-sound";
-import firePlaceSound from "../assets/fireplace/fire-place.ogg";
-import clearForest from "../assets/forest/clear-forest.ogg";
-import summerForest from "../assets/forest/summer-forest.ogg";
-import windyForest from "../assets/forest/windy-forest.ogg";
-import monolitPiano from "../assets/piano/monolit-piano.ogg";
-import loopsPiano from "../assets/piano/piano-loops.ogg";
-import gentleRain from "../assets/rain/gentle-rain.ogg";
-import heavyRain from "../assets/rain/heavy-rain.ogg";
-import lightRain from "../assets/rain/light-rain.ogg";
-import superHeavyRain from "../assets/rain/super-heavy-rain.ogg";
-import trainSound from "../assets/train/train-passing.ogg";
-import typingSound from "../assets/typing/typing-sound.ogg";
+import firePlaceSound from "../assets/fireplace/fire-place.m4a";
+import clearForest from "../assets/forest/clear-forest.m4a";
+import summerForest from "../assets/forest/summer-forest.m4a";
+import windyForest from "../assets/forest/windy-forest.m4a";
+import monolitPiano from "../assets/piano/monolit-piano.m4a";
+import loopsPiano from "../assets/piano/piano-loops.m4a";
+import gentleRain from "../assets/rain/gentle-rain.m4a";
+import heavyRain from "../assets/rain/heavy-rain.m4a";
+import lightRain from "../assets/rain/light-rain.m4a";
+import superHeavyRain from "../assets/rain/super-heavy-rain.m4a";
+import trainSound from "../assets/train/train-passing.m4a";
+import typingSound from "../assets/typing/typing-sound.m4a";
 
 export const sounds: AmbientSound[] = [
     {
