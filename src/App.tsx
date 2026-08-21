@@ -33,8 +33,6 @@ function SoundCard({
       <h3>{sound.name}</h3>
       <h2>{status ?? "Not Added"}</h2>
 
-      <audio controls src={sound.src} />
-
       {isAdded ? (
         <button onClick={onRemove}>
           Remove
