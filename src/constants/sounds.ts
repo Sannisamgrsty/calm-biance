@@ -1,5 +1,5 @@
 import type { AmbientSound } from "../types/services/ambient-sound";
-import firePlaceSound from "../assets/fireplace/fire-place.m4a";
+import firePlaceSound from "../assets/fireplace/fire-place.mp3";
 import clearForest from "../assets/forest/clear-forest.m4a";
 import summerForest from "../assets/forest/summer-forest.m4a";
 import windyForest from "../assets/forest/windy-forest.m4a";
